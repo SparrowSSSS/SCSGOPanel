@@ -1,0 +1,105 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3a4750;
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Arial';
+    color: white;
+}
+
+.line {
+    background-color: #303841;
+    height: 6px;
+    border-radius: 3px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 440px;
+}
+
+.title {
+    width: 200px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.block1 {
+    color: white;
+    text-align: center;
+    font-family: "Arial";
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.active {
+    color: #00adb5;
+}
+
+.slesh {
+    color: #303841;
+    margin-left:40px;
+    margin-right: 40px;
+    font-size: 30px;
+    user-select: none;
+}
+
+.sign_in, .sign_up {
+    transition: 300ms;
+}
+
+.sign_in:hover, .sign_up:hover {
+    cursor: pointer;
+}
+
+input {
+    background-color: #3a4750;
+    border: 3px solid #303841;
+}
+
+.block2 {
+    border: 3px solid #303841;
+}
+
+.block2 > input:focus .block2 {
+    border-color: #00adb5;
+}
+
+.password {
+    margin-bottom: 20px;
+}
+
+.password input {
+    border: none;
+}
+
+form h3 {
+    color: white;
+    font-family: "Arial";
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+fieldset > div {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 400px;
+}
+
+fieldset {
+    border: 6px solid #303841;
+    border-radius: 3px;
+}
+
