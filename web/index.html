@@ -23,27 +23,40 @@
                     class="sign_in">Войти</span></h2>
             <div class="line"></div>
         </div>
-        <form action="">
+        <form action="" class="s_up">
             <fieldset>
                 <div class="email">
-                    <h3>Email</h3>
-                    <input type="email">
-                </div>
-                <div class="nickname">
-                    <h3>Nickname</h3>
-                    <input type="text">
-                </div>
-                <div class="password">
-                    <h3>Password</h3>
-                    <div class="block2">
-                        <input type="password"><i class="fa-solid fa-eye"></i>
+                    <h4 class="h1">Email</h4>
+                    <input class="i1" type="email" autofocus>
+                    <div class="check_email">
+                        <p>Похоже, что почта введена неправильно.</p>
                     </div>
                 </div>
+                <div class="nickname">
+                    <h4 class="h2">Nickname</h4>
+                    <input class="i2" type="text">
+                </div>
+                <div class="password">
+                    <h4 class="h3">Password</h4>
+                    <div class="block2">
+                        <input type="password" class="pass i3">
+                        <div class="block3"><i class="fa-solid fa-eye"></i></div>
+                    </div>
+                    <p id="r">Пароль должен содержать минимум 8 символов</p>
+                </div>
             </fieldset>
+            <button class="create_account">Создать аккаунт</button>
+            <button class="google"><img src="img/Google.png" alt="google"><span>Зарегистрироваться через
+                    Google</span></button>
+            <p class="foot">Создавая аккаунт, вы автоматически соглашаетесь с <a href="">условиями пользования</a></p>
         </form>
     </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript" src="/eel.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>
