@@ -42,6 +42,7 @@ h1 {
     font-family: "Arial";
     letter-spacing: 1px;
     margin-bottom: 20px;
+    user-select: none;
 }
 
 .active {
@@ -213,6 +214,7 @@ input:not(input[class="pass i3"]):focus {
     text-align: center;
     width: 200px;
     margin: 0 auto;
+    user-select: none;
 }
 
 .foot a {
@@ -233,6 +235,7 @@ input:not(input[class="pass i3"]):focus {
     border-radius: 3px;
     display: none;
     transition: 300ms;
+    user-select: none;
 }
 
 input[type="email"]:invalid + .check_email {
@@ -242,6 +245,7 @@ input[type="email"]:invalid + .check_email {
 #r {
     color: #191f27;
     margin-top: 5px;
+    user-select: none;
 }
 
 .none {

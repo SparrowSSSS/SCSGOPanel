@@ -1,0 +1,124 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3a4750;
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Arial';
+    color: white;
+}
+
+.container {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.block1 {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.line {
+    background-color: #303841;
+    height: 6px;
+    border-radius: 3px;
+}
+
+h2 {
+    font-family: 'Arial';
+    color: white;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+h2:hover {
+    cursor: pointer;
+}
+
+input {
+    background-color: #3a4750;
+    border: 3px solid #303841;
+    font-size: 15px;
+    padding: 3px;
+    font-weight: bold;
+    transition: 300ms;
+    width: 97%;
+}
+
+*:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+input:focus {
+    border-color: #00adb5;
+}
+
+button {
+    margin: 20px 0;
+    width: 100%;
+    height: 40px;
+    border: none;
+    transition: 300ms;
+    background-color: #00adb5;
+    color: white;
+    font-weight: bold;
+    font-family: "Arial";
+    font-size: 20px;
+    border-radius: 3px;
+    user-select: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #008991;
+}
+
+button:active{
+    cursor: wait;
+}
+
+a {
+    color: #00adb5;
+    text-decoration: none;
+    user-select: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.block2 {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.check_email {
+    background-color: rgba(255, 0, 0, 0.5);
+    font-weight: bold;
+    padding: 5px;
+    width: 302px;
+    margin-top: 5px;
+    border-radius: 3px;
+    display: none;
+    transition: 300ms;
+    user-select: none;
+}
+
+input:invalid + .check_email {
+    display: block;
+}

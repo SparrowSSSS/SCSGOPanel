@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100px, initial-scale=1.0">
+    <link rel="stylesheet" href="css/rec_pass.css">
+    <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="fontawesome/css/brands.css" rel="stylesheet">
+    <link href="fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/regular.css">
+    <title>SCSPanel</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="block1">
+            <h1>Восстановление пароля</h1>
+            <div class="line"></div>
+        </div>
+        <form action="">
+            <h2 class="h">Email</h2>
+            <input class="i" id="em" type="email" autofocus value="">
+            <div class="check_email">
+                <p>Похоже, что почта введена неправильно.</p>
+            </div>
+            <button>Восстановить пароль через почту</button>
+        </form>
+        <div class="block2">
+            <a href="index.html"><i class="fa-sharp fa-solid fa-arrow-left"></i> Вернуться назад</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('em').value = sessionStorage.getItem('em-input_save');
+    </script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/rec_pass.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+</body>
+
+</html>
