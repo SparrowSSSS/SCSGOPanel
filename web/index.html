@@ -23,7 +23,7 @@
                     class="sign_in">Войти</span></h2>
             <div class="line"></div>
         </div>
-        <form action="" class="s_up">
+        <form action="" class="s_up block">
             <fieldset>
                 <div class="email">
                     <h4 class="h1">Email</h4>
@@ -42,13 +42,32 @@
                         <input type="password" class="pass i3">
                         <div class="block3"><i class="fa-solid fa-eye"></i></div>
                     </div>
-                    <p id="r">Пароль должен содержать минимум 8 символов</p>
+                    <p id="r" class="none">Пароль должен содержать минимум 8 символов</p>
                 </div>
             </fieldset>
             <button class="create_account">Создать аккаунт</button>
             <button class="google"><img src="img/Google.png" alt="google"><span>Зарегистрироваться через
                     Google</span></button>
             <p class="foot">Создавая аккаунт, вы автоматически соглашаетесь с <a href="">условиями пользования</a></p>
+        </form>
+        <form action="" class="s_in none">
+            <fieldset>
+                <div class="email">
+                    <h4 class="h1">Email</h4>
+                    <input class="i1" type="email" autofocus>
+                    <div class="check_email">
+                        <p>Похоже, что почта введена неправильно.</p>
+                    </div>
+                </div>
+                <div class="password">
+                    <h4 class="h3">Password<a href="" class="res_pass">Восстановить пароль</a></h4>
+                    <div class="block2">
+                        <input type="password" class="pass i3">
+                        <div class="block3"><i class="fa-solid fa-eye"></i></div>
+                    </div>
+                </div>
+            </fieldset>
+            <button class="button__s_in">Войти</button>
         </form>
     </div>
     <script src="js/jquery-3.3.1.min.js"></script>
