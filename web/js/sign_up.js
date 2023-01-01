@@ -27,24 +27,4 @@ $(document).ready(function () {
         $('#r').addClass('block');
         $('#r').removeClass('none');
     });
-    $('.sign_up').click(function () {
-        if ($('.sign_up').attr('class') == 'sign_up') {
-            $('.sign_in').removeClass('active');
-            $('.sign_up').addClass('active');
-            $('.s_in').addClass('none');
-            $('.s_in').removeClass('block');
-            $('.s_up').addClass('block');
-            $('.s_up').removeClass('none');
-        };
-    });
-    $('.sign_in').click(function () {
-        if ($('.sign_in').attr('class') == 'sign_in') {
-            $('.sign_up').removeClass('active');
-            $('.sign_in').addClass('active');
-            $('.s_up').addClass('none');
-            $('.s_up').removeClass('block');
-            $('.s_in').addClass('block');
-            $('.s_in').removeClass('none');
-        };
-    });
 });

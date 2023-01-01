@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sign_up.css">
     <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="fontawesome/css/brands.css" rel="stylesheet">
     <link href="fontawesome/css/solid.css" rel="stylesheet">
     <link rel="stylesheet" href="fontawesome/css/regular.css">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
     <title>Окно авторизации</title>
 </head>
 
 <body>
     <div class="container">
         <div class="title">
-            <h1>SCSPanel</h1>
+            <h1>S<span>CS:GOPanel</span></h1>
             <div class="line"></div>
         </div>
         <div class="block1">
-            <h2><span class="sign_up active">Зарегистрироваться</span><span class="slesh">/</span><span
-                    class="sign_in">Войти</span></h2>
+            <h2><span class="sign_up">Зарегистрироваться</span><span class="slesh">/</span><a href="sign_in.html" class="sign_in">Войти</a></h2>
             <div class="line"></div>
         </div>
-        <form action="" class="s_up block">
+        <form action="">
             <fieldset>
                 <div class="email">
                     <h4 class="h1">Email</h4>
@@ -50,33 +50,9 @@
                     Google</span></button>
             <p class="foot">Создавая аккаунт, вы автоматически соглашаетесь с <a href="">условиями пользования</a></p>
         </form>
-        <form action="" class="s_in none">
-            <fieldset>
-                <div class="email">
-                    <h4 class="h1">Email</h4>
-                    <input class="i1" type="email" id="em" autofocus>
-                    <div class="check_email">
-                        <p>Похоже, что почта введена неправильно.</p>
-                    </div>
-                </div>
-                <div class="password">
-                    <h4 class="h3">Password<a href="rec_pass.html" class="res_pass">Восстановить пароль</a></h4>
-                    <div class="block2">
-                        <input type="password" class="pass i3">
-                        <div class="block3"><i class="fa-solid fa-eye"></i></div>
-                    </div>
-                </div>
-            </fieldset>
-            <button class="button__s_in">Войти</button>
-        </form>
     </div>
-    <script>
-        document.getElementById('em').oninput = function () {
-            sessionStorage.setItem('em-input_save', this.value);
-        }
-    </script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/sign_up.js"></script>
     <script type="text/javascript" src="/eel.js"></script>
 </body>
 
