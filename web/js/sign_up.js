@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    async function sign_up() {
+        let email = document.getElementById('e').value;
+        let nickname = document.getElementById('n').value;
+        let password = document.getElementById('p').value;
+        let res = await eel.sign_up__f(email, nickname, password)();
+    }
     $('.block3').click(function () {
         if ($(this).html() == '<i class="fa-solid fa-eye"></i>') {
             $(this).html('<i class="fa-sharp fa-solid fa-eye-slash"></i>');
@@ -26,5 +32,8 @@ $(document).ready(function () {
     $(".pass").focus(function () {
         $('#r').addClass('block');
         $('#r').removeClass('none');
+    });
+    $('.create_account').click(function () {
+        sign_up();
     });
 });

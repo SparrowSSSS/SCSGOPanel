@@ -20,26 +20,27 @@
             <div class="line"></div>
         </div>
         <div class="block1">
-            <h2><span class="sign_up">Зарегистрироваться</span><span class="slesh">/</span><a href="sign_in.html" class="sign_in">Войти</a></h2>
+            <h2><span class="sign_up">Зарегистрироваться</span><span class="slesh">/</span><a href="sign_in.html"
+                    class="sign_in">Войти</a></h2>
             <div class="line"></div>
         </div>
         <form action="">
             <fieldset>
                 <div class="email">
                     <h4 class="h1">Email</h4>
-                    <input class="i1" type="email" autofocus>
+                    <input class="i1" type="email" autofocus maxlength="320" id="e">
                     <div class="check_email">
                         <p>Похоже, что почта введена неправильно.</p>
                     </div>
                 </div>
                 <div class="nickname">
                     <h4 class="h2">Nickname</h4>
-                    <input class="i2" type="text">
+                    <input class="i2" type="text" maxlength="10" id="n">
                 </div>
                 <div class="password">
                     <h4 class="h3">Password</h4>
                     <div class="block2">
-                        <input type="password" class="pass i3">
+                        <input type="password" class="pass i3" maxlength="20" id="p">
                         <div class="block3"><i class="fa-solid fa-eye"></i></div>
                     </div>
                     <p id="r" class="none">Пароль должен содержать минимум 8 символов</p>
