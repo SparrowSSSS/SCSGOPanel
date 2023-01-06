@@ -4,6 +4,25 @@ $(document).ready(function () {
         let nickname = document.getElementById('n').value;
         let password = document.getElementById('p').value;
         let res = await eel.sign_up__f(email, nickname, password)();
+        if (res == '1') {
+            window.location.href = '../main.html';
+            sessionStorage.setItem('user_nickname', nickname);
+            sessionStorage.setItem('user_email', email);
+            let id = await eel.get__id(email)();
+            sessionStorage.setItem('user_id', id);
+        }
+        else if (res == '0') {
+            document.getElementById("error0").classList.remove("none");
+            document.getElementById("error0").classList.add("block");
+        }
+        else if (res == '2') {
+            document.getElementById("error2").classList.remove("none");
+            document.getElementById("error2").classList.add("block");
+        }
+        else {
+            document.getElementById("error3").classList.remove("none");
+            document.getElementById("error3").classList.add("block");
+        }
     }
     $('.block3').click(function () {
         if ($(this).html() == '<i class="fa-solid fa-eye"></i>') {

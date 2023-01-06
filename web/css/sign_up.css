@@ -259,3 +259,14 @@ input[type="email"]:invalid + .check_email {
 .block {
     display: block;
 }
+
+.error {
+    background-color: rgba(255, 0, 0, 0.5);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 3px;
+    transition: 300ms;
+    user-select: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
