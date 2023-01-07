@@ -32,3 +32,25 @@ h2 {
 .h {
     margin-bottom: 10px;
 }
+
+a {
+    color: #00adb5;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.a {
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.fa-door-open {
+    color: #000;
+}

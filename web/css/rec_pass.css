@@ -87,10 +87,6 @@ button:hover {
     background-color: #008991;
 }
 
-button:active{
-    cursor: wait;
-}
-
 a {
     color: #00adb5;
     text-decoration: none;

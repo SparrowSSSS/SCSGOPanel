@@ -179,7 +179,7 @@ input[type="email"]:invalid + .check_email {
     color: #00adb5;
     text-decoration: none;
     font-size: 14px;
-    margin-left: 80px;
+    margin-left: 105px;
 }
 
 .rec_pass:hover {
@@ -205,6 +205,31 @@ input[type="email"]:invalid + .check_email {
     background-color: #008991;
 }
 
-.button__s_in:active {
+.overlay {
+    background-color: rgba(1, 1, 1, 0.5);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
     cursor: wait;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.error {
+    background-color: rgba(255, 0, 0, 0.5);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 3px;
+    transition: 300ms;
+    user-select: none;
+    text-align: center;
+    margin-bottom: 20px;
 }

@@ -149,7 +149,7 @@ input:not(input[class="pass i3"]):focus {
 }
 
 .block3 i {
-    margin-top: 3px;
+    margin-top: 4px;
     margin-right: 3px;
 }
 
@@ -177,10 +177,6 @@ input:not(input[class="pass i3"]):focus {
     background-color: #008991;
 }
 
-.create_account:active{
-    cursor: wait;
-}
-
 .google {
     width: 100%;
     height: 40px;
@@ -202,10 +198,6 @@ input:not(input[class="pass i3"]):focus {
 .google:hover {
     background-color: rgb(180, 180, 180);
     cursor: pointer;
-}
-
-.google:active {
-    cursor: wait;
 }
 
 .google img {
@@ -269,4 +261,14 @@ input[type="email"]:invalid + .check_email {
     user-select: none;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.overlay {
+    background-color: rgba(1, 1, 1, 0.5);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    cursor: wait;
 }

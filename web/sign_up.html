@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/sign_up.css">
     <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="fontawesome/css/brands.css" rel="stylesheet">
     <link href="fontawesome/css/solid.css" rel="stylesheet">
-    <link rel="stylesheet" href="fontawesome/css/regular.css">
     <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
     <title>Окно авторизации</title>
 </head>
 
 <body>
+    <div class="none" id="overlay"></div>
     <div class="container">
         <div class="title">
             <h1>S<span>CS:GOPanel</span></h1>
@@ -28,14 +27,14 @@
             <fieldset>
                 <div class="email">
                     <h4 class="h1">Email</h4>
-                    <input class="i1" type="email" autofocus maxlength="320" id="e">
+                    <input class="i1" type="email" autofocus maxlength="320" id="e" autocomplete="off">
                     <div class="check_email">
                         <p>Похоже, что почта введена неправильно.</p>
                     </div>
                 </div>
                 <div class="nickname">
                     <h4 class="h2">Nickname</h4>
-                    <input class="i2" type="text" maxlength="10" id="n">
+                    <input class="i2" type="text" maxlength="10" id="n" autocomplete="off">
                 </div>
                 <div class="password">
                     <h4 class="h3">Password</h4>
@@ -47,7 +46,7 @@
                 </div>
             </fieldset>
             <p class="error none" id="error0">Произошла техническая ошибка</p>
-            <p class="error none" id="error2">Данные введены неправильно</p>
+            <p class="error none" id="error2">Неверные данные</p>
             <p class="error none" id="error3">Пользователь с данной почтой уже существует</p>
             <button type = "button" class="create_account">Создать аккаунт</button>
             <button class="google"><img src="img/Google.png" alt="google"><span>Зарегистрироваться через
