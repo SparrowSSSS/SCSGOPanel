@@ -54,3 +54,7 @@ a:hover {
 .fa-door-open {
     color: #000;
 }
+
+#email {
+    font-size: 15px;
+}

@@ -29,13 +29,17 @@
     <div class="a">
         <a href="sign_up.html" id="exit"><i class="fa-solid fa-door-open"></i> Выйти</a>
     </div>
-    <script>
-        document.getElementById('nickname').innerHTML = sessionStorage.getItem('user_nickname');
-        document.getElementById('email').innerHTML = sessionStorage.getItem('user_email');
-        document.getElementById('id').innerHTML = sessionStorage.getItem('user_id');
-    </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        async function format_email(email) {
+            let new_email = await eel.f_email(email)();
+            return new_email
+        }
+        document.getElementById('nickname').innerHTML = sessionStorage.getItem('user_nickname');
+        document.getElementById('email').innerHTML = format_email(sessionStorage.getItem('user_email'));
+        document.getElementById('id').innerHTML = sessionStorage.getItem('user_id');
+    </script>
     <script type="text/javascript" src="/eel.js"></script>
 </body>
 

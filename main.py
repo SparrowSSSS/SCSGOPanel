@@ -64,8 +64,10 @@ def get__id(email):
         cursor = db.cursor()
         cursor.execute(f"SELECT id FROM user WHERE email = '{email}'")
         id = cursor.fetchall()
+        id = str(id)[2 : -4]
         db.close()
         print(f"get__id---{email}---Успешно")
+        print(id)
         return id
     except:
         db.close()
@@ -78,7 +80,7 @@ def sign_in__f(email, password):
     try:
         if email == "" or password == "":
             print(f"sign_up---{email}---Пустые данные")
-            return "2"
+            return "2.1"
         db = db_connect()
         cursor = db.cursor()
         cursor.execute(f"SELECT email FROM user WHERE email = '{email}'")
@@ -98,11 +100,11 @@ def sign_in__f(email, password):
             else:
                 db.close()
                 print(f"sign_in---{email}---Неверный пароль")
-                return "2"
+                return "2.2"
         else:
             db.close()
             print(f"sign_in---{email}---Почта не найдена")
-            return "2"
+            return "2.1"
     except:
         db.close()
         print(f"sign_in---{email}---Техническая ошибка")
@@ -111,20 +113,48 @@ def sign_in__f(email, password):
 
 
 @eel.expose
-def get__nickname(email):
+def get__nickname(id):
     try:
         db = db_connect()
         cursor = db.cursor()
-        cursor.execute(f"SELECT nickname FROM user WHERE email = '{email}'")
+        cursor.execute(f"SELECT nickname FROM user WHERE id = '{id}'")
         nickname = cursor.fetchall()
+        nickname = str(nickname)[3 : -5]
         db.close()
         print("get__nickname---{email}---Успешно")
+        print(nickname)
         return nickname
     except:
         db.close()
         print("get__nickname---{email}---Техническая ошибка")
         return "Anonymus"
 
+
+@eel.expose
+def f_email(email):
+    try:
+        if len(email) <= 126:
+            return email
+        else:
+            part = []
+            new_email = ""
+            i1 = 0
+            i2 = 126
+            check = 0
+            while check == 0:
+                part.append(email[i1 : i2])
+                if len(email) - i2 <= 126:
+                    part.append(email[i2 : ])
+                    check = 1
+                else:
+                    i1 += 126
+                    i2 += 126
+            for a in range(len(part)):
+                new_email += part[a] + "<wbr>"
+            print(new_email)
+            return new_email
+    except:
+        return email
 
 
 eel.init("web")
