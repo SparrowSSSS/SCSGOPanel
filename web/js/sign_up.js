@@ -18,10 +18,15 @@ async function sign_up() {
         document.getElementById("error0").classList.remove("none");
         document.getElementById("error0").classList.add("block");
     }
-    else if (res == '2') {
+    else if (res == '2.1') {
         document.getElementById("error2").classList.remove("none");
         document.getElementById("error2").classList.add("block");
         document.getElementById('e').value = "";
+        document.getElementById('p').value = "";
+    }
+    else if (res == '2.2') {
+        document.getElementById("error2").classList.remove("none");
+        document.getElementById("error2").classList.add("block");
         document.getElementById('p').value = "";
     }
     else {

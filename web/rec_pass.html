@@ -13,6 +13,7 @@
 
 <body>
     <div class="container">
+        <div class="none" id="overlay"></div>
         <div class="block1">
             <h1>Изменение пароля</h1>
             <div class="line"></div>
@@ -21,9 +22,11 @@
             <h2 class="h">Email</h2>
             <input class="i" id="em" type="email" autofocus value="" maxlength="320" autocomplete="off">
             <div class="check_email">
-                <p>Похоже, что почта введена неправильно.</p>
+                <p>Похоже, что почта введена неправильно</p>
             </div>
-            <button>Изменить пароль через почту</button>
+            <div id="result">
+            </div>
+            <button type="button" id="button">Изменить пароль через почту</button>
         </form>
         <div class="block2">
             <a href="sign_in.html" id="a"><i class="fa-sharp fa-solid fa-arrow-left"></i> Вернуться назад</a>

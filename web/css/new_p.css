@@ -44,79 +44,31 @@ h2 {
     user-select: none;
 }
 
-h2:hover {
-    cursor: pointer;
-}
-
-input {
+.pass {
     background-color: #3a4750;
-    border: 3px solid #303841;
     font-size: 15px;
     padding: 3px;
     font-weight: bold;
     transition: 300ms;
-    width: 97%;
+    width: 89%;
+    border:none;
 }
 
-*:focus {
-    outline: 0;
-    outline-offset: 0;
-}
-
-input:focus {
-    border-color: #00adb5;
-}
-
-button {
-    margin: 20px 0;
-    width: 100%;
-    height: 40px;
-    border: none;
-    transition: 300ms;
-    background-color: #00adb5;
-    color: white;
-    font-weight: bold;
-    font-family: "Arial";
-    font-size: 20px;
-    border-radius: 3px;
-    user-select: none;
-}
-
-button:hover {
+h2:hover {
     cursor: pointer;
-    background-color: #008991;
 }
 
-a {
-    color: #00adb5;
-    text-decoration: none;
+#r {
+    color: #191f27;
+    margin-top: 5px;
     user-select: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-.block2 {
-    width: 200px;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.check_email {
-    background-color: rgba(255, 0, 0, 0.5);
-    font-weight: bold;
-    padding: 5px;
-    width: 390px;
-    margin-top: 10px;
-    border-radius: 3px;
+.none {
     display: none;
-    transition: 300ms;
-    user-select: none;
-    text-align: center;
 }
 
-input:invalid + .check_email {
+.block {
     display: block;
 }
 
@@ -139,6 +91,62 @@ input:invalid + .check_email {
     right: 0;
     top: 0;
     cursor: wait;
+}
+
+*:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.pass:focus {
+    border-color: #00adb5;
+}
+
+.block2:has(.pass:focus) {
+    border-color: #00adb5;
+}
+
+.block3 i {
+    margin-top: 4px;
+    margin-right: 3px;
+}
+
+.block3:hover {
+    cursor: pointer;
+}
+
+.block3 {
+    float: right;
+}
+
+button {
+    margin: 20px 0;
+    width: 100%;
+    height: 40px;
+    border: none;
+    transition: 300ms;
+    background-color: #00adb5;
+    color: white;
+    font-weight: bold;
+    font-family: "Arial";
+    font-size: 20px;
+    border-radius: 3px;
+    user-select: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #008991;
+}
+
+.block2 {
+    border: 3px solid #303841;
+    width: 394px;
+    transition: 300ms;
+}
+
+.block2>.pass:focus .block2 {
+    border-color: #00adb5;
 }
 
 #rec_p {

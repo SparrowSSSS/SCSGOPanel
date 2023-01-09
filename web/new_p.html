@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/new_p.css">
+    <title>SCS:GOPanel</title>
+</head>
+<body>
+    <div class="container">
+        <div class="none" id="overlay"></div>
+        <div class="block1">
+            <h1>Укажите новый пароль</h1>
+            <div class="line"></div>
+        </div>
+        <form action="">
+            <h2 class="h">New password</h2>
+            <div class="block2">
+                <input type="password" class="pass i" maxlength="20" id="p">
+                <div class="block3"><i class="fa-solid fa-eye"></i></div>
+            </div>
+            <p id="r" class="none">Пароль должен содержать минимум 8 символов</p>
+            <div id="result">
+            </div>
+            <button type="button" id="button">Изменить пароль</button>
+        </form>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/new_p.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+</body>
+</html>
