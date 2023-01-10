@@ -182,7 +182,7 @@ def change_pass(email):
                 </head>
                 <body>
                     <p>Для изменения пароля перейдите на сайт по ссылке ниже и введите новый пароль.</p>
-                    <a href="#">ссылка</a>
+                    <a href="https://dimlll.github.io/scsgop/">https://dimlll.github.io/scsgop/</a>
                 </body>
                 </html>
             '''
