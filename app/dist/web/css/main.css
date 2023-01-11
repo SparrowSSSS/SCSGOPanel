@@ -1,0 +1,47 @@
+@import url(com.css);
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    border: 2px solid transparent;
+    border-image: linear-gradient(rgba(33,106,255,1) 40%, rgba(190,38,255,1) 60%);
+    -webkit-border-image: -webkit-linear-gradient(rgba(33,106,255,1) 40%, rgba(190,38,255,1) 60%);
+    border-image-slice: 1;
+}
+
+h2 {
+    font-family: 'Arial';
+    color: white;
+}
+
+.h {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #00adb5;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.a {
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.fa-door-open {
+    color: #000;
+}
+
+#email {
+    font-size: 15px;
+}

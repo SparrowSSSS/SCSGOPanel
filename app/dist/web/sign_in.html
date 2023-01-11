@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sign_in.css">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <title>Окно авторизации</title>
+</head>
+
+<body>
+    <div class="none" id="overlay"></div>
+    <div class="container">
+        <div class="title">
+            <h1>S<span>CS:GOPanel</span></h1>
+            <div class="line"></div>
+        </div>
+        <div class="block1">
+            <h2><a href="sign_up.html" class="sign_up">Зарегистрироваться</a><span class="slesh">/</span><span class="sign_in">Войти</span></h2>
+            <div class="line"></div>
+        </div>
+        <form action="">
+            <fieldset>
+                <div class="email">
+                    <h4 class="h1">Email</h4>
+                    <input class="i1" type="email" id="em" autofocus maxlength="320" autocomplete="off">
+                    <div class="check_email">
+                        <p>Похоже, что почта введена неправильно</p>
+                    </div>
+                </div>
+                <div class="password">
+                    <h4 class="h2">Password<a class="rec_pass" href="rec_pass.html">Изменить пароль</a></h4>
+                    <div class="block2">
+                        <input type="password" class="pass i2" maxlength="20" id="p">
+                        <div class="block3"><i class="fa-solid fa-eye"></i></div>
+                    </div>
+                </div>
+            </fieldset>
+            <div id="result">
+            </div>
+            <button type="button" class="button__s_in">Войти</button>
+        </form>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/com.js"></script>
+    <script src="js/sign_in.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+</body>
+
+</html>

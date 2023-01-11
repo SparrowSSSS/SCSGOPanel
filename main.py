@@ -12,10 +12,8 @@ def db_connect():
     try:
         db = pymysql.connect(host="127.0.0.1", port=3306,
                              user="mysql", passwd="mysql", database="scs:gop")
-        print("db_connect---Успешно")
         return db
     except:
-        print("db_connect---Не удалось подключиться к базе")
         return None
 
 
@@ -23,10 +21,8 @@ def db_connect():
 def sign_up__f(email, nickname, password):
     try:
         if email == "" or nickname == "":
-            print(f"sign_up---{email}---Пустые данные")
             return "2.1"
         if len(password) < 8:
-            print(f"sign_up---{email}---В пароле меньше 8 символов")
             return "2.2"
         db = db_connect()
         cursor = db.cursor()
@@ -46,19 +42,15 @@ def sign_up__f(email, nickname, password):
                     f"INSERT INTO user (nickname, email, password, salt) VALUES ('{nickname}', '{email}', '{key}', '{salt}')")
                 db.commit()
                 db.close()
-                print(f"sign_up---{email}---Успешно")
                 return "1"
             else:
                 db.close()
-                print(f"sign_up---{email}---Почта не прошла проверку")
                 return "2.1"
         else:
             db.close()
-            print(f"sign_up---{email}---Такой аккаунт уже есть")
             return "3"
     except:
         db.close()
-        print(f"sign_up---{email}---Техническая ошибка")
         return "0"
 
 
@@ -71,12 +63,9 @@ def get__id(email):
         id = cursor.fetchall()
         id = str(id)[2: -4]
         db.close()
-        print(f"get__id---{email}---Успешно")
-        print(id)
         return id
     except:
         db.close()
-        print("get__id---{email}---Техническая ошибка")
         return "Не удалось достать"
 
 
@@ -84,7 +73,6 @@ def get__id(email):
 def sign_in__f(email, password):
     try:
         if email == "" or password == "":
-            print(f"sign_up---{email}---Пустые данные")
             return "2.1"
         db = db_connect()
         cursor = db.cursor()
@@ -101,19 +89,15 @@ def sign_in__f(email, password):
             key = hashlib.sha256(password.encode('utf-8') + salt).hexdigest()
             if key == hesh:
                 db.close()
-                print(f"sign_in---{email}---Успешно")
                 return "1"
             else:
                 db.close()
-                print(f"sign_in---{email}---Неверный пароль")
                 return "2.2"
         else:
             db.close()
-            print(f"sign_in---{email}---Почта не найдена")
             return "2.1"
     except:
         db.close()
-        print(f"sign_in---{email}---Техническая ошибка")
         return "0"
 
 
@@ -126,12 +110,9 @@ def get__nickname(id):
         nickname = cursor.fetchall()
         nickname = str(nickname)[3: -5]
         db.close()
-        print("get__nickname---{email}---Успешно")
-        print(nickname)
         return nickname
     except:
         db.close()
-        print("get__nickname---{email}---Техническая ошибка")
         return "Noname"
 
 
@@ -156,7 +137,6 @@ def f_email(email):
                     i2 += 126
             for a in range(len(part)):
                 new_email += part[a] + "<wbr>"
-            print(new_email)
             return new_email
     except:
         return email
@@ -190,16 +170,13 @@ def change_pass(email):
             msg["Subject"] = "Инструкция по изменению пароля в SCS:GOPanel"
             smtpObj.sendmail(f"scsgopanel@gmail.com", {email}, msg.as_string())
             smtpObj.quit()
-            print(f"change_pass---{email}---Успешно")
             db.close()
             return 1
         else:
-            print(f"change_pass---{email}---Почта не найдена")
             db.close()
             return 2
     except:
         smtpObj.quit()
-        print(f"change_pass---{email}---Техническая ошибка")
         db.close()
         return 0
 
@@ -208,7 +185,6 @@ def change_pass(email):
 def new_password(password, email):
     try:
         if len(password) < 8:
-            print(f"new_password---{email}---В пароле меньше 8 символов")
             return "2"
         salt = os.urandom(32)
         salt = b64encode(salt)
@@ -222,10 +198,8 @@ def new_password(password, email):
         cursor.execute(f"UPDATE user SET salt = '{salt}' WHERE email = '{email}'")
         db.commit()
         db.close()
-        print(f"new_password---{email}---Успешно")
         return "1"
     except:
-        print(f"new_password---{email}---Техническая ошибка")
         db.close()
         return 0  
 

@@ -1,0 +1,66 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3a4750;
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.line {
+    background-color: #303841;
+    height: 6px;
+    border-radius: 3px;
+}
+
+*:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.error {
+    background-color: rgba(255, 0, 0, 0.5);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 3px;
+    transition: 300ms;
+    user-select: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.overlay {
+    background-color: rgba(1, 1, 1, 0.5);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    cursor: wait;
+}
+
+h1 {
+    font-family: 'Arial';
+    color: white;
+}
+
+.block2:has(.pass:focus) {
+    border-color: #00adb5;
+}
+
+.pass {
+    width: 89%;
+}

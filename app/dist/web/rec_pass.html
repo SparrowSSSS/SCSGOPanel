@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100px, initial-scale=1.0">
+    <link rel="stylesheet" href="css/rec_pass.css">
+    <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <title>SCS:GOPanel</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="none" id="overlay"></div>
+        <div class="block1">
+            <h1>Изменение пароля</h1>
+            <div class="line"></div>
+        </div>
+        <form action="">
+            <h2 class="h">Email</h2>
+            <input class="i" id="em" type="email" autofocus value="" maxlength="320" autocomplete="off">
+            <div class="check_email">
+                <p>Похоже, что почта введена неправильно</p>
+            </div>
+            <div id="result">
+            </div>
+            <button type="button" id="button">Изменить пароль через почту</button>
+        </form>
+        <div class="block2">
+            <a href="sign_in.html" id="a"><i class="fa-sharp fa-solid fa-arrow-left"></i> Вернуться назад</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('em').value = sessionStorage.getItem('em-input_save');
+    </script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/com.js"></script>
+    <script src="js/rec_pass.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+</body>
+
+</html>
