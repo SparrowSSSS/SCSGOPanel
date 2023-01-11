@@ -1,21 +1,4 @@
-html {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #3a4750;
-    box-sizing: inherit;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    font-family: 'Arial';
-    color: white;
-}
+@import url(com.css);
 
 .container {
     width: 400px;
@@ -28,12 +11,6 @@ h1 {
     margin: 0 auto;
     margin-bottom: 20px;
     user-select: none;
-}
-
-.line {
-    background-color: #303841;
-    height: 6px;
-    border-radius: 3px;
 }
 
 h2 {
@@ -56,11 +33,6 @@ input {
     font-weight: bold;
     transition: 300ms;
     width: 97%;
-}
-
-*:focus {
-    outline: 0;
-    outline-offset: 0;
 }
 
 input:focus {
@@ -118,27 +90,6 @@ a:hover {
 
 input:invalid + .check_email {
     display: block;
-}
-
-.error {
-    background-color: rgba(255, 0, 0, 0.5);
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 3px;
-    transition: 300ms;
-    user-select: none;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.overlay {
-    background-color: rgba(1, 1, 1, 0.5);
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    cursor: wait;
 }
 
 #rec_p {

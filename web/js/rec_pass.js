@@ -26,9 +26,6 @@ async function r_p_f() {
 }
 
 $(document).ready(function () {
-    $('.h').click(function () {
-        $('.i').focus();
-    });
     $('#a').click(function () {
         sessionStorage.removeItem('em-input_save');
     });

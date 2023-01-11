@@ -15,18 +15,15 @@ async function sign_in() {
         sessionStorage.setItem('user_nickname', nickname);
     }
     else if (res == '0') {
-        document.getElementById("error0").classList.remove("none");
-        document.getElementById("error0").classList.add("block");
+        document.getElementById('result').innerHTML = "<p class='error'>Произошла техническая ошибка</p>";
     }
     else if (res == '2.1'){
-        document.getElementById("error2").classList.remove("none");
-        document.getElementById("error2").classList.add("block");
+        document.getElementById('result').innerHTML = "<p class='error'>Неверные данные</p>";
         document.getElementById('em').value = "";
         document.getElementById('p').value = "";
     }
     else {
-        document.getElementById("error2").classList.remove("none");
-        document.getElementById("error2").classList.add("block");
+        document.getElementById('result').innerHTML = "<p class='error'>Неверные данные</p>";
         document.getElementById('p').value = "";
     }
     document.getElementById("overlay").classList.remove("overlay");
@@ -34,21 +31,6 @@ async function sign_in() {
 }
 
 $(document).ready(function () {
-    $('.block3').click(function () {
-        if ($(this).html() == '<i class="fa-solid fa-eye"></i>') {
-            $(this).html('<i class="fa-sharp fa-solid fa-eye-slash"></i>');
-            $('.pass').attr('type', 'text');
-        } else {
-            $(this).html('<i class="fa-solid fa-eye"></i>');
-            $('.pass').attr('type', 'password');
-        }
-    });
-    $('.h1').click(function () {
-        $('.i1').focus();
-    });
-    $('.h2').click(function () {
-        $('.i2').focus();
-    });
     $('.button__s_in').click(function () {
         sign_in();
     });

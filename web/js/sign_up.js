@@ -15,23 +15,19 @@ async function sign_up() {
         sessionStorage.setItem('user_id', id);
     }
     else if (res == '0') {
-        document.getElementById("error0").classList.remove("none");
-        document.getElementById("error0").classList.add("block");
+        document.getElementById('result').innerHTML = "<p class='error'>Произошла техническая ошибка</p>";
     }
     else if (res == '2.1') {
-        document.getElementById("error2").classList.remove("none");
-        document.getElementById("error2").classList.add("block");
+        document.getElementById('result').innerHTML = "<p class='error'>Неверные данные</p>";
         document.getElementById('e').value = "";
         document.getElementById('p').value = "";
     }
     else if (res == '2.2') {
-        document.getElementById("error2").classList.remove("none");
-        document.getElementById("error2").classList.add("block");
+        document.getElementById('result').innerHTML = "<p class='error'>Неверные данные</p>";
         document.getElementById('p').value = "";
     }
     else {
-        document.getElementById("error3").classList.remove("none");
-        document.getElementById("error3").classList.add("block");
+        document.getElementById('result').innerHTML = "<p class='error'>Пользователь с данной почтой уже существует</p>";
         document.getElementById('e').value = "";
         document.getElementById('p').value = "";
     }
@@ -43,34 +39,6 @@ $(document).ready(function () {
     if (localStorage.getItem('auto_sign_in') == "yes") {
         window.location.href = '../main.html';
     }
-    $('.block3').click(function () {
-        if ($(this).html() == '<i class="fa-solid fa-eye"></i>') {
-            $(this).html('<i class="fa-sharp fa-solid fa-eye-slash"></i>');
-            $('.pass').attr('type', 'text');
-        } else {
-            $(this).html('<i class="fa-solid fa-eye"></i>');
-            $('.pass').attr('type', 'password');
-        }
-    });
-    $('.h1').click(function () {
-        $('.i1').focus();
-    });
-    $('.h2').click(function () {
-        $('.i2').focus();
-    });
-    $('.h3').click(function () {
-        $('.i3').focus();
-    });
-    $("*").focus(function () {
-        if ($('#r').attr('class') == 'block') {
-            $('#r').addClass('none');
-            $('#r').removeClass('block');
-        };
-    });
-    $(".pass").focus(function () {
-        $('#r').addClass('block');
-        $('#r').removeClass('none');
-    });
     $('.create_account').click(function () {
         sign_up();
     });

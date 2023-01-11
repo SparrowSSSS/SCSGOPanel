@@ -1,27 +1,4 @@
-html {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #3a4750;
-    box-sizing: inherit;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    font-family: 'Arial';
-    color: white;
-}
-
-.line {
-    background-color: #303841;
-    height: 6px;
-    border-radius: 3px;
-}
+@import url(com.css);
 
 .container {
     margin: 0 auto;
@@ -120,32 +97,18 @@ fieldset>div {
 fieldset {
     border: 6px solid #303841;
     border-radius: 3px;
-    margin-bottom: 20px;
 }
 
 .block3 {
     float: right;
 }
 
-input:not(input[class="pass i3"]) {
+input:not(input.pass) {
     width: 300px;
 }
 
-*:focus {
-    outline: 0;
-    outline-offset: 0;
-}
-
-input:not(input[class="pass i3"]):focus {
+input:not(input.pass):focus {
     border-color: #00adb5;
-}
-
-.block2:has(.pass:focus) {
-    border-color: #00adb5;
-}
-
-.pass {
-    width: 89%;
 }
 
 .block3 i {
@@ -167,6 +130,7 @@ input:not(input[class="pass i3"]):focus {
     font-weight: bold;
     font-family: "Arial";
     font-size: 20px;
+    margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 3px;
     user-select: none;
@@ -242,33 +206,4 @@ input[type="email"]:invalid + .check_email {
     color: #191f27;
     margin-top: 5px;
     user-select: none;
-}
-
-.none {
-    display: none;
-}
-
-.block {
-    display: block;
-}
-
-.error {
-    background-color: rgba(255, 0, 0, 0.5);
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 3px;
-    transition: 300ms;
-    user-select: none;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.overlay {
-    background-color: rgba(1, 1, 1, 0.5);
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    cursor: wait;
 }
