@@ -6,14 +6,23 @@ from base64 import b64encode
 from email_validate import validate
 import smtplib
 from email.mime.text import MIMEText
+import datetime
 
+print("Программа успешно запущена")
+print("---")
 
 def db_connect():
     try:
         db = pymysql.connect(host="127.0.0.1", port=3306,
                              user="mysql", passwd="mysql", database="scs:gop")
+        now = datetime.datetime.now()
+        print(f"db_connect---{now.strftime('%H:%M')}---Успешно")
+        print("---")
         return db
     except:
+        now = datetime.datetime.now()
+        print(f"db_connect---{now.strftime('%H:%M')}---Ошибка")
+        print("---")
         return None
 
 
@@ -21,8 +30,14 @@ def db_connect():
 def sign_up__f(email, nickname, password):
     try:
         if email == "" or nickname == "":
+            now = datetime.datetime.now()
+            print(f"sign_up__f---{now.strftime('%H:%M')}---Пустые данные")
+            print("---")
             return "2.1"
         if len(password) < 8:
+            now = datetime.datetime.now()
+            print(f"sign_up__f---{now.strftime('%H:%M')}---Маленький пароль")
+            print("---")
             return "2.2"
         db = db_connect()
         cursor = db.cursor()
@@ -42,15 +57,27 @@ def sign_up__f(email, nickname, password):
                     f"INSERT INTO user (nickname, email, password, salt) VALUES ('{nickname}', '{email}', '{key}', '{salt}')")
                 db.commit()
                 db.close()
+                now = datetime.datetime.now()
+                print(f"sign_up__f---{now.strftime('%H:%M')}---Успешно")
+                print("---")
                 return "1"
             else:
                 db.close()
+                now = datetime.datetime.now()
+                print(f"sign_up__f---{now.strftime('%H:%M')}---Почта не прошла проверку")
+                print("---")
                 return "2.1"
         else:
             db.close()
+            now = datetime.datetime.now()
+            print(f"sign_up__f---{now.strftime('%H:%M')}---Такой пользователь уже есть")
+            print("---")
             return "3"
     except:
         db.close()
+        now = datetime.datetime.now()
+        print(f"sign_up__f---{now.strftime('%H:%M')}---Ошибка")
+        print("---")
         return "0"
 
 
@@ -63,16 +90,25 @@ def get__id(email):
         id = cursor.fetchall()
         id = str(id)[2: -4]
         db.close()
+        now = datetime.datetime.now()
+        print(f"get__id---{now.strftime('%H:%M')}---Успешно")
+        print("---")
         return id
     except:
         db.close()
-        return "Не удалось достать"
+        now = datetime.datetime.now()
+        print(f"get__id---{now.strftime('%H:%M')}---Ошибка")
+        print("---")
+        return "None"
 
 
 @eel.expose
 def sign_in__f(email, password):
     try:
         if email == "" or password == "":
+            now = datetime.datetime.now()
+            print(f"sign_in__f---{now.strftime('%H:%M')}---Пустые данные")
+            print("---")
             return "2.1"
         db = db_connect()
         cursor = db.cursor()
@@ -89,15 +125,27 @@ def sign_in__f(email, password):
             key = hashlib.sha256(password.encode('utf-8') + salt).hexdigest()
             if key == hesh:
                 db.close()
+                now = datetime.datetime.now()
+                print(f"sign_in__f---{now.strftime('%H:%M')}---Успешно")
+                print("---")
                 return "1"
             else:
                 db.close()
+                now = datetime.datetime.now()
+                print(f"sign_in__f---{now.strftime('%H:%M')}---Неверный пароль")
+                print("---")
                 return "2.2"
         else:
             db.close()
+            now = datetime.datetime.now()
+            print(f"sign_in__f---{now.strftime('%H:%M')}---Такого пользователя нет")
+            print("---")
             return "2.1"
     except:
         db.close()
+        now = datetime.datetime.now()
+        print(f"sign_in__f---{now.strftime('%H:%M')}---Ошибка")
+        print("---")
         return "0"
 
 
@@ -110,9 +158,15 @@ def get__nickname(id):
         nickname = cursor.fetchall()
         nickname = str(nickname)[3: -5]
         db.close()
+        now = datetime.datetime.now()
+        print(f"get__nickname---{now.strftime('%H:%M')}---Успешно")
+        print("---")
         return nickname
     except:
         db.close()
+        now = datetime.datetime.now()
+        print(f"get__nickname---{now.strftime('%H:%M')}---Ошибка")
+        print("---")
         return "Noname"
 
 
@@ -171,13 +225,22 @@ def change_pass(email):
             smtpObj.sendmail(f"scsgopanel@gmail.com", {email}, msg.as_string())
             smtpObj.quit()
             db.close()
+            now = datetime.datetime.now()
+            print(f"change_pass---{now.strftime('%H:%M')}---Успешно")
+            print("---")
             return 1
         else:
             db.close()
+            now = datetime.datetime.now()
+            print(f"change_pass---{now.strftime('%H:%M')}---Такого пользователя нет")
+            print("---")
             return 2
     except:
         smtpObj.quit()
         db.close()
+        now = datetime.datetime.now()
+        print(f"change_pass---{now.strftime('%H:%M')}---Ошибка")
+        print("---")
         return 0
 
 
@@ -185,6 +248,9 @@ def change_pass(email):
 def new_password(password, email):
     try:
         if len(password) < 8:
+            now = datetime.datetime.now()
+            print(f"new_password---{now.strftime('%H:%M')}---Маленький пароль")
+            print("---")
             return "2"
         salt = os.urandom(32)
         salt = b64encode(salt)
@@ -198,9 +264,15 @@ def new_password(password, email):
         cursor.execute(f"UPDATE user SET salt = '{salt}' WHERE email = '{email}'")
         db.commit()
         db.close()
+        now = datetime.datetime.now()
+        print(f"new_password---{now.strftime('%H:%M')}---Успешно")
+        print("---")
         return "1"
     except:
         db.close()
+        now = datetime.datetime.now()
+        print(f"new_password---{now.strftime('%H:%M')}---Ошибка")
+        print("---")
         return 0  
 
 
