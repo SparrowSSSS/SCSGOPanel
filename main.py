@@ -205,7 +205,7 @@ def change_pass(email):
         if len(cursor.fetchall()) != 0:
             smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
             smtpObj.starttls()
-            smtpObj.login('scsgopanel@gmail.com', 'stulqreaxzgvaosn')
+            smtpObj.login('email', 'app_password_google')
             text = '''
                 <!DOCTYPE html>
                 <html>
@@ -222,7 +222,7 @@ def change_pass(email):
             '''
             msg = MIMEText(text, "html")
             msg["Subject"] = "Инструкция по изменению пароля в SCS:GOPanel"
-            smtpObj.sendmail(f"scsgopanel@gmail.com", {email}, msg.as_string())
+            smtpObj.sendmail(f"email", {email}, msg.as_string())
             smtpObj.quit()
             db.close()
             now = datetime.datetime.now()
